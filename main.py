@@ -6,6 +6,13 @@ from models import Base, Question
 from schemas import QuestionCreate, QuestionResponse
 
 app = FastAPI()
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # allow all origins (for now)
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Create table
 Base.metadata.create_all(bind=engine)
