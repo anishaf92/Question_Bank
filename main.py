@@ -1,6 +1,6 @@
 from fastapi import FastAPI, Depends
 from sqlalchemy.orm import Session
-
+from fastapi.middleware.cors import CORSMiddleware
 from database import engine, SessionLocal
 from models import Base, Question
 from schemas import QuestionCreate, QuestionResponse
